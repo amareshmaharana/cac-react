@@ -1,7 +1,8 @@
 import { useState } from 'react'
+import './App.css';
 
 function App() {
-  const [counter, setCounter] = useState(3);
+  const [counter, setCounter] = useState(0);
 
   // let counter = 3;
 
