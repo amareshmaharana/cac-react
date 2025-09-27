@@ -13,13 +13,9 @@ function App() {
     let pass = "";
     let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 
-    if (numberAllowed) {
-      str += "0123456789";
-    }
+    if (numberAllowed) str += "0123456789";
 
-    if (charAllowed) {
-      str += "~!@#$%^&*()_+-./:;<=>?@[]{}";
-    }
+    if (charAllowed) str += "~!@#$%^&*()_+-./:;<=>?@[]{}";
 
     for (let i = 1; i <= length; i++) {
       pass += str.charAt(Math.floor(Math.random() * str.length));
@@ -34,11 +30,9 @@ function App() {
     window.navigator.clipboard.writeText(password);
   }, [password]);
 
-
   useEffect(() => {
     passwordGenerator();
   }, [length, numberAllowed, charAllowed, passwordGenerator]);
-  
 
   return (
     <>
@@ -93,7 +87,7 @@ function App() {
             defaultChecked={charAllowed}
             id="characterInput"
             onChange={() => {
-              setNumberAllowed((prev) => !prev);
+              setCharAllowed((prev) => !prev);
             }}
           />
           <label htmlFor="characterInput">Characters</label>
